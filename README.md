@@ -1,6 +1,6 @@
-# Data-Mining
-参考：https://github.com/HOLL4ND/DataMining-Experiment
-数据挖掘实验
+﻿# Data-Mining
+参考并致谢：https://github.com/HOLL4ND/DataMining-Experiment
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　数据挖掘实验
                                                         实验一
 广州大学某班有同学100人，现要从两个数据源汇总学生数据。第一个数据源在数据库中，第二个数据源在txt文件中，两个数据源课程存在缺失、冗余和不一致性，请用C/C++/Java程序实现对两个数据源的一致性合并以及每个学生样本的数值量化。
 数据库表：ID (int), 姓名(string), 家乡(string:限定为Beijing / Guangzhou / Shenzhen / Shanghai), 性别（string:boy/girl）、身高（float:单位是cm)）、课程1成绩（float）、课程2成绩（float）、...、课程10成绩(float)、体能测试成绩（string：bad/general/good/excellent）；其中课程1-课程5为百分制，课程6-课程10为十分制。
@@ -18,3 +18,5 @@ txt文件：ID(string：6位学号)，性别（string:male/female）、身高（
 3. 对每门成绩进行z-score归一化，得到归一化的数据矩阵。
 4. 计算出100x100的相关矩阵，并可视化出混淆矩阵。（为避免歧义，这里“协相关矩阵”进一步细化更正为100x100的相关矩阵，100为学生样本数目，视实际情况而定）
 5. 根据相关矩阵，找到距离每个样本最近的三个样本，得到100x3的矩阵（每一行为对应三个样本的ID）输出到txt文件中，以\t,\n间隔
+
+
