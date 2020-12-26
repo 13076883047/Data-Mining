@@ -41,15 +41,15 @@ def SD_list(list,mean):      # 返回列表的标准差，计算时跳过空缺�
 def z_score(df,colList=None):
     # 如果没有给出列名则对整个dataframe 作z-score归一化
     if colList is None:
-        cList = df.columns.values.tolist()
+        cList = df.columns.values.tolist()    # 转换成列表
         for label in cList:
-            cList = df[label].tolist()
-            cMean = mean_list(cList)
-            cSD = SD_list(cList,cMean)
-            df[label].fillna(cMean,inplace=True)
+            cList = df[label].tolist()        
+            cMean = mean_list(cList)          # 求平均值
+            cSD = SD_list(cList,cMean)        # 求标准差
+            df[label].fillna(cMean,inplace=True)   # 用平均值指定修改原对象数值
             cList = df[label].tolist()
             for index in range(len(cList)):
-                new_num = round((cList[index]-cMean)/cSD,5)
+                new_num = round((cList[index]-cMean)/cSD,5) # round()返回浮点数的四舍五入值
                 df.loc[index,label] = new_num
         return
     for label in colList:

@@ -23,10 +23,10 @@ c1max = c1Sorted[length-1]    # 最后一个值
 # x轴单位划分
 start = 10*(c1min//10)
 end = 10*(c1max//10)+1
-bins = np.arange(start,end,5)
+bins = np.arange(start,end,5) # 5分一个间隔   
 
 # 作图
-(n,bins,patches) = plt.hist(c1Sorted,bins,alpha = 0.6)
+(n,bins,patches) = plt.hist(c1Sorted,bins,alpha = 0.6)  # hist（数据,条形数,透明度）
 x= np.arange(start+5/2,end-5/2,5)
 
 # 给hist图添加数值
