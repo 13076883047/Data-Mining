@@ -56,6 +56,7 @@ import numpy as np
 import pandas as pd  
 import math  
 import seaborn as sn               用于绘图，seaborn是在matplotlib的基础上进行更高级的封装
+
 import matplotlib.pyplot as plt    用于绘图
 
 
@@ -64,6 +65,8 @@ import numpy as np
 import pandas as pd    
 import copy 
 import pickle     # 实验数据二进制序列化和反序列化
+
 import random     # 随机数
+
 import matplotlib.pyplot as plt    
 from math import sqrt  # 平方根计算
