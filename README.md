@@ -1,5 +1,7 @@
 ﻿# Data-Mining
-组员信息：区景祥 
+组员信息：
+组长：区景祥
+组员：陈鹏，熊嘉杰 
 参考并致谢：https://github.com/HOLL4ND/DataMining-Experiment
 　　　　　　　　　　　　　　　　　　　　　　  数据挖掘实验
                                                         
