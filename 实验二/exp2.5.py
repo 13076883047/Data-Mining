@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 pd.set_option('display.max_rows',None)     # 显示全部行
 pd.set_option('display.max_colum',None)    #  显示全部列
 
-def mean_list(list)->float:    # 返回列表的平均值，计算时跳过空缺值
+def mean_list(list)->float:    ## 返回列表的平均值，计算时跳过空缺值
     sum = float(0)
     n = float(len(list))
     for num in list:
