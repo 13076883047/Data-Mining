@@ -1,10 +1,12 @@
+# 5. 根据相关矩阵，找到距离每个样本最近的三个样本，得到100x3的矩阵（每一行为对应三个样本的ID）输出到txt文件中，以\t,\n间隔
+
 import pandas as pd 
 import numpy as np          
 import seaborn as sn        
 import math     
 import matplotlib.pyplot as plt
 
-pd.set_option('display_max_rows',None)
+pd.set_option('display.max_rows',None)
 pd.set_option('display.max_colum',None)
 
 def mean_list(list)->float:    # 返回列表的平均值，计算时跳过空缺值
@@ -110,7 +112,7 @@ def corMatrix(df):
 if __name__ == '__main__':
     
     #读取合并后的数据
-    df = pd.read_csv('./output/Exp01/MergeData.csv')
+    df = pd.read_csv('D:\大三上\数据挖掘\data.csv')
     
     #去除完全空缺的列
     isnan = df.isnull().all()
@@ -163,6 +165,5 @@ if __name__ == '__main__':
     dfsu = pd.DataFrame(data = su)   
     dfsu_c = pd.DataFrame(data = su_c)   
     print(dfsu_c)  
-    dfsu_c.to_csv('./output/Exp02/2-5.txt',sep = "\t")
+    dfsu_c.to_csv('D:\大三上\数据挖掘\exp2.5.txt',sep = "\t")
    # print(df['ID'][1])
-
