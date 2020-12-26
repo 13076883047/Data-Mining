@@ -81,7 +81,7 @@ def SD(data,lesson):  # 求标准差
 
     return sd_b
 
-def ak(data,lesson):
+def ak(data,lesson):       # 课程C1-C10
     row = data.shape[0]
     list_a = {}
     mean_sum = mean(data,lesson)
