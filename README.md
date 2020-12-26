@@ -52,6 +52,7 @@ import copy
 copy.deepcopy() 
 
 实验二用到的库函数：
+
 import numpy as np                    
 import pandas as pd  
 import math  
@@ -61,6 +62,7 @@ import matplotlib.pyplot as plt    用于绘图
 
 
 实验三用到的库函数:
+
 import numpy as np          
 import pandas as pd    
 import copy 
