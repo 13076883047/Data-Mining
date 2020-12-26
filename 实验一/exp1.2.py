@@ -10,7 +10,7 @@ def question_1(data,count):     # 家乡为Beijing的所有课程的平均成绩
             temp.append(data.loc[i]['ID'])
             temp.append(data.loc[i]['Name'])
             aver_Grade = (data.loc[i]['C1'] + data.loc[i]['C2'] + data.loc[i]['C3'] + data.loc[i]['C4'] + data.loc[i]['C5'] +
-                          data.loc[i]['C6'] + data.loc[i]['C7'] + data.loc[i]['C8'] + data.loc[i]['C9'] + data.loc[i]['C10']) / 10
+                          data.loc[i]['C6'] + data.loc[i]['C7'] + data.loc[i]['C8'] + data.loc[i]['C9'] + data.loc[i]['C10']) / 10    # 求所有科目的平均分
             temp.append(aver_Grade)
             a = copy.deepcopy(temp)
             answer1.append(a)
@@ -62,13 +62,13 @@ def mean(data,lesson):   # 求平均值
     row = data.shape[0]
     for i in range(row):
         sum += data[lesson][i]
-    mean_sum = sum / row   # 设置精度
+    mean_sum = sum / row   # 均值
     return mean_sum
 
 def SD(data,lesson):  # 求标准差
     sd_x = 0         #协方差
     sd_b = 0         #标准差
-    sum_xi = 0      
+    sum_xi = 0       
     sum_xi_2 = 0 
     
     row =data.shape[0]
@@ -76,8 +76,8 @@ def SD(data,lesson):  # 求标准差
         sum_xi += data[lesson][i]
         sum_xi_2 += data[lesson][i]**2
 
-    sd_x = (sum_xi_2-sum_xi*sum_xi/(row+1)) / row 
-    sd_b = sd_x ** 0.5 
+    sd_x = (sum_xi_2 - sum_xi*sum_xi/(row+1)) / row         # 求协方差
+    sd_b = sd_x ** 0.5                                      # 标准差 等于 协方差开平方
 
     return sd_b
 
@@ -87,15 +87,17 @@ def ak(data,lesson):
     mean_sum = mean(data,lesson)
     sd_sum = SD(data,lesson)
     for i in range(row):
-        list_a[i] = (data[lesson][i] - mean_sum) / sd_sum
+        list_a[i] = (data[lesson][i] - mean_sum) / sd_sum     # （科目成绩-科目平均成绩）/标准差
 
     return list_a
 
-def bk(data):
-    row = data.shape[0]
+def bk(data):                    
+    # 求体侧成绩平均成绩和标准差，最后返回 list_b[] = （体侧成绩-体侧成绩平均值）/ 标准差
+    # list_b[] 用于求与各科成绩的相关性
+    row = data.shape[0]     
     list_b = {}
-    mean_sum = mean(data,'Constitution')
-    sd_sum = SD(data,'Constitution')
+    mean_sum = mean(data,'Constitution')          # 平均值
+    sd_sum = SD(data,'Constitution')              # 标准差
     for i in range(row):
         list_b[i] = (data['Constitution'][i]-mean_sum) / sd_sum
 
@@ -104,12 +106,12 @@ def bk(data):
 def question_4(data,lesson):      # 学习成绩和体能成绩测试，两者相关性是多少，九门课的成绩分别与体能成绩计算相关性
     dependence_sum = 0
     list_a = ak(data,lesson)
-    list_b = bk(data)
+    list_b = bk(data)                            
     row = data.shape[0]
     for i in range(row):
-        dependence_sum += list_a[i] * list_b[i]
+        dependence_sum += list_a[i] * list_b[i]    # 相关性
 
-    print("The dependence coefficient between course '%s' and course 'Constitution' is:%f" %(lesson,dependence_sum))
+    print(" 课程 '%s' and 课程 'Constitution 的相关性是' is:%f" %(lesson,dependence_sum))
 
 
 
@@ -118,6 +120,7 @@ if __name__ =='__main__':
     d = pd.read_csv('D:\大三上\数据挖掘\data.csv')
     d = d.fillna(0)
     length = len(d)   #学生人数
+
     question_1(d,length)
 
     question_2(d,length)

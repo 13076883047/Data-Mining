@@ -4,7 +4,7 @@ from numpy.core.defchararray import index
 import pandas as pd        # python 数据分析模块
 import numpy as np                                       
 import math
-pd.set_option('display.max_rows',None)
+pd.set_option('display.max_rows',None)          # 显示所有行
 
 # 性别统一： 男(boy)->male  女(girl)->female
 def gen(gender):
