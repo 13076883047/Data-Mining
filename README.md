@@ -23,3 +23,27 @@ txt文件：ID(string：6位学号)，性别（string:male/female）、身高（
 
 实验一文件夹：exp1.1 合并数据  exp1.2：统计实验要求数据
 实验二文件夹：exp2.1 exp2.2 exp2.3 exp2.4 exp2.5分别对应实验二第一、第二、第三、第四个、第五个要求   
+
+
+实验一用到的库函数：
+from numpy.core.defchararray import index        
+
+import pandas as pd
+在Python中，pandas是基于NumPy数组构建的，使数据预处理、清洗、分析工作变得更快更简单。pandas是专门为处理表格和混杂数据设计的，而NumPy更适合处理统一的数值数组数据。
+pandas 两个主要的数据结构：Series 和 DataFrame，本实验主要用DataFrame
+      
+import numpy as np
+用于大量维度数组与矩阵运算
+
+import math
+math.isnan() 用于检查数字是否为NaN，如果为NaN则返回True，否则False
+
+import copy  
+copy.deepcopy() 
+
+实验二用到的库函数：
+import numpy as np                    
+import pandas as pd  
+import math  
+import seaborn as sn               用于绘图，seaborn是在matplotlib的基础上进行更高级的封装
+import matplotlib.pyplot as plt    用于绘图
